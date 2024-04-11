@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: nostr-relay-sqlite
+    image: nostr-relay-sqlite
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    command: npm run start -- --port 3000 --file ./nostr.db
